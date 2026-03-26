@@ -1,0 +1,9 @@
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="sygna_blue">#5F96F9</color>
+    <color name="sygna_blue_light">#DCE9FF</color>
+    <color name="gray_100">#F5F5F5</color>
+    <color name="gray_300">#DDDDDD</color>
+    <color name="gray_500">#888888</color>
+</resources>
