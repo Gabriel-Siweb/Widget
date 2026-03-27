@@ -99,7 +99,11 @@
   <PropertyGroup>
     <StopWidgetBeforeBuild Condition="'$(StopWidgetBeforeBuild)' == ''">true</StopWidgetBeforeBuild>
   </PropertyGroup>
-  <Target Name="StopWidgetDevProcesses" BeforeTargets="PrepareForBuild;GenerateAppxPackage" Condition="'$(StopWidgetBeforeBuild)' == 'true'">
+  <!-- Solo en PrepareForBuild: cierra procesos y borra .pri antiguos/bloqueados. NO antes de GenerateAppxPackage: borraría el resources.pri ya generado en este build (DEP1000). -->
+  <Target Name="StopWidgetDevProcesses" BeforeTargets="PrepareForBuild" Condition="'$(StopWidgetBeforeBuild)' == 'true'">
     <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildThisFileDirectory)..\..\tools\stop-widget-dev.ps1&quot; -PackageRoot &quot;$(MSBuildProjectDirectory)\bin\$(Platform)\$(Configuration)&quot;" IgnoreExitCode="true" />
+  </Target>
+  <Target Name="StopWidgetDevProcessesBeforePackage" BeforeTargets="GenerateAppxPackage" Condition="'$(StopWidgetBeforeBuild)' == 'true'">
+    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildThisFileDirectory)..\..\tools\stop-widget-dev.ps1&quot;" IgnoreExitCode="true" />
   </Target>
 </Project>

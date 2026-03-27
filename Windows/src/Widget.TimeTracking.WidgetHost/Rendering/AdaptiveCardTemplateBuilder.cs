@@ -124,13 +124,16 @@ internal static class AdaptiveCardTemplateBuilder
         + "<path d='M4.965 8.877L4.998 6.146'/>"
         + "</g></svg>");
 
+    /// <summary>CTA sesión cerrada: mismo tamaño que el resto de botones (44×44, #5F96F9 + icono logout).</summary>
     private static readonly string OpenAppBlue = SvgDataUri(
         "<svg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44'>"
         + "<rect width='44' height='44' rx='12' fill='#5F96F9'/>"
-        + "<g transform='translate(10,10)' fill='none' stroke='white' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round'>"
-        + "<path d='M14 5h5v5'/>"
-        + "<path d='M10 14 19 5'/>"
-        + "<path d='M19 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4'/>"
+        + "<g transform='translate(10,10) scale(0.889)' fill='none' stroke='white' stroke-width='1.97402' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'>"
+        + "<path d='M19.1222 10.3525L21.9297 13.16L19.1222 15.9675'/>"
+        + "<path d='M16.1895 13.1602H21.8594'/>"
+        + "<path d='M10.7021 13.1602H12.8516'/>"
+        + "<path d='M6.56521 19.2139C5.20532 17.7224 4.38281 15.6716 4.38281 13.1602C4.38281 7.6768 8.30893 4.38676 13.1562 4.38676'/>"
+        + "<path d='M13.1562 21.9336C12.0047 21.9336 10.9081 21.7472 9.89911 21.3962'/>"
         + "</g></svg>");
 
     #endregion
